@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>AR Photoframe</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/+esm"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <main class="app">
+    <section class="preview" aria-label="カメラプレビュー">
+      <video id="camera" class="layer" autoplay muted playsinline aria-hidden="true"></video>
+      <!-- Canvaなどで作成した9:16透過PNG/APNGをassets/frame.pngとして配置してください -->
+      <img id="frameImage" class="layer" src="assets/frame.png" alt="フォトフレーム" hidden draggable="false" />
+      <video id="frameVideo" class="layer" autoplay muted playsinline loop preload="auto">
+        <source src="assets/frame_alpha.webm" type='video/webm; codecs="vp9"' />
+        <source src="assets/frame_alpha.mov" type='video/mov; codecs="hvc1"' />
+      </video>
+      <canvas id="crownCanvas" class="layer" aria-hidden="true"></canvas>
+      <div class="overlay-ui" aria-live="polite">
+        <p class="overlay-hint" id="camera-status-text">
+          カメラを起動しています...
+        </p>
+        <button id="shutterButton" class="shutter-button" type="button">
+          <svg class="shutter-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <span class="sr-only">撮影する</span>
+        </button>
+      </div>
+    </section>
+
+    <a id="downloadLink" class="download-link" href="#" hidden aria-hidden="true">
+      保存
+    </a>
+  </main>
+
+  <canvas id="captureCanvas" aria-hidden="true"></canvas>
+
+  <div id="share-modal" class="share-modal hidden" role="dialog" aria-modal="true" aria-labelledby="share-modal-title">
+    <div class="modal-content">
+      <h2 id="share-modal-title">撮影結果</h2>
+      <div class="image-container">
+        <img id="captured-image" class="captured-image" alt="撮影した画像プレビュー" draggable="false" />
+      </div>
+      <p class="save-text">画像を長押しして保存できます</p>
+      <div class="modal-buttons">
+        <button id="share-button" class="modal-btn share-btn" type="button">
+          共有する
+        </button>
+        <button id="close-modal" class="modal-btn close-btn" type="button">
+          閉じる
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    カメラ利用にはJavaScriptが必要です。ブラウザ設定で有効にしてください。
+  </noscript>
+
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>

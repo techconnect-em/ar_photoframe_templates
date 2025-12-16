@@ -12,7 +12,7 @@ const MEDIAPIPE_WASM_PATH = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-visio
 const HAND_LANDMARKER_MODEL_URL = 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task';
 
 // Trophy sizing constants
-const TROPHY_SIZE_RATIO = 1.2; // Trophy width relative to hand size (wrist to middle finger base)
+const TROPHY_SIZE_RATIO = 2.5; // Trophy width relative to hand size (wrist to middle finger base)
 const TROPHY_Y_OFFSET_RATIO = -0.3; // Offset above wrist (relative to hand size)
 
 const CAMERA_CONSTRAINTS = {
@@ -358,8 +358,8 @@ function computeTrophyTransform(landmarks) {
   const trophyWidth = handSize * TROPHY_SIZE_RATIO;
   const trophyHeight = trophyWidth * (trophyImage.height / trophyImage.width);
 
-  // Calculate rotation angle from wrist to middle finger base
-  const angle = Math.atan2(middleBaseY - wristY, middleBaseX - wristX) - Math.PI / 2;
+  // Keep trophy upright (no rotation based on hand orientation)
+  const angle = 0;
 
   return {
     x: palmCenterX,

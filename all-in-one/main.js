@@ -606,14 +606,18 @@ function init() {
     }
   });
 
-  // Load assets & Start
+  // Start Camera Immediately
+  startCamera();
+
+  // Load assets & Landmarkers in background
   Promise.all([
     loadImage(CROWN_IMAGE_PATH).then(img => crownImage = img),
     loadImage(MEDAL_IMAGE_PATH).then(img => medalImage = img),
     loadImage(TROPHY_IMAGE_PATH).then(img => trophyImage = img),
     initLandmarkers()
   ]).then(() => {
-    startCamera();
+    console.log('Assets and Landmarkers loaded');
+    updateDetectionStatus();
   });
 }
 

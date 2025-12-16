@@ -1,4 +1,5 @@
-import { FilesetResolver, FaceLandmarker, PoseLandmarker, HandLandmarker } from '@mediapipe/tasks-vision';
+// Removed top-level import to prevent blocking on load error
+// import { FilesetResolver, FaceLandmarker, PoseLandmarker, HandLandmarker } from '@mediapipe/tasks-vision';
 
 const TARGET_CAPTURE_SHORT_EDGE = 1440;
 const TARGET_CAPTURE_LONG_EDGE = 1920;
@@ -112,6 +113,8 @@ function canPlayVp9WebM() {
 
 async function initLandmarkers() {
   try {
+    const { FilesetResolver, FaceLandmarker, PoseLandmarker, HandLandmarker } = await import('@mediapipe/tasks-vision');
+
     const fileset = await FilesetResolver.forVisionTasks(MEDIAPIPE_WASM_PATH);
 
     // Initialize in parallel
@@ -133,6 +136,7 @@ async function initLandmarkers() {
     updateDetectionStatus();
   } catch (error) {
     console.warn('Landmarker initialization failed:', error);
+    alert('Failed to load AR models. Please check your internet connection.');
   }
 }
 

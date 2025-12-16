@@ -13,7 +13,7 @@ const POSE_LANDMARKER_MODEL_URL = 'https://storage.googleapis.com/mediapipe-mode
 
 // Medal sizing constants
 const MEDAL_SIZE_RATIO = 0.6; // Medal width relative to shoulder width
-const MEDAL_Y_OFFSET_RATIO = -0.4; // Offset below shoulder midpoint (relative to shoulder width)
+const MEDAL_Y_OFFSET_RATIO = -0.15; // Offset below shoulder midpoint (relative to shoulder width)
 
 const CAMERA_CONSTRAINTS = {
   audio: false,

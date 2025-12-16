@@ -1,0 +1,6 @@
+feat: Add MediaPipe FaceLandmarker integration with crown overlay
+
+- Integrate MediaPipe Tasks Vision via ES Modules with import maps
+- Add face detection and crown positioning logic
+- Crown follows face position with smoothing
+- Update capture to include crown overlay in screenshots

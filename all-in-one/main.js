@@ -25,10 +25,10 @@ const SMOOTHING_FACTOR = 0.3;
 // Transform Constants
 // Crown
 const CROWN_SIZE_RATIO = 1.6;
-const CROWN_Y_OFFSET_RATIO = 1.1;
+const CROWN_Y_OFFSET_RATIO = 0.8;
 // Medal
 const MEDAL_SIZE_RATIO = 0.6;
-const MEDAL_Y_OFFSET_RATIO = 1.2;
+const MEDAL_Y_OFFSET_RATIO = 0.25;
 // Trophy
 const TROPHY_SIZE_RATIO = 3.8;
 const TROPHY_Y_OFFSET_RATIO = -2.0;

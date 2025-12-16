@@ -311,7 +311,7 @@ function computeMedalTransform(landmarks) {
   // PoseLandmarker landmark indices:
   // 11: left_shoulder
   // 12: right_shoulder
-  
+
   const leftShoulder = landmarks[11];
   const rightShoulder = landmarks[12];
 
@@ -321,8 +321,8 @@ function computeMedalTransform(landmarks) {
 
   // Check visibility - if shoulders are not visible enough, skip
   const minVisibility = 0.5;
-  if ((leftShoulder.visibility ?? 0) < minVisibility || 
-      (rightShoulder.visibility ?? 0) < minVisibility) {
+  if ((leftShoulder.visibility ?? 0) < minVisibility ||
+    (rightShoulder.visibility ?? 0) < minVisibility) {
     return null;
   }
 
@@ -353,7 +353,8 @@ function computeMedalTransform(landmarks) {
   const medalHeight = medalWidth * (medalImage.height / medalImage.width);
 
   // Calculate rotation angle from shoulder positions
-  const angle = Math.atan2(rightShoulderY - leftShoulderY, rightShoulderX - leftShoulderX);
+  // Vector from Right Shoulder (12) to Left Shoulder (11) points "Right" on screen (0 radians)
+  const angle = Math.atan2(leftShoulderY - rightShoulderY, leftShoulderX - rightShoulderX);
 
   return {
     x: centerX,

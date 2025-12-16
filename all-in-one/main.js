@@ -69,7 +69,7 @@ let iosFrameTimer = null;
 let shouldResumeCamera = false;
 
 // DOM Elements
-let cameraEl, frameImageEl, frameVideoEl, shutterButton, captureCanvas;
+let cameraEl, frameImageEl, frameVideoEl, shutterButton, captureCanvas, previewEl;
 let crownCanvas, medalCanvas, trophyCanvas;
 let crownCtx, medalCtx, trophyCtx;
 let toggleFace, togglePose, toggleHand;

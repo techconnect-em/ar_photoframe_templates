@@ -13,7 +13,7 @@ const HAND_LANDMARKER_MODEL_URL = 'https://storage.googleapis.com/mediapipe-mode
 
 // Trophy sizing constants
 const TROPHY_SIZE_RATIO = 3.8; // Trophy width relative to hand size (wrist to middle finger base)
-const TROPHY_Y_OFFSET_RATIO = -1.5; // Offset above wrist (relative to hand size)
+const TROPHY_Y_OFFSET_RATIO = -2.0; // Offset above wrist (relative to hand size)
 
 const CAMERA_CONSTRAINTS = {
   audio: false,

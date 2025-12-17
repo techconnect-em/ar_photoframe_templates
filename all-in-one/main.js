@@ -200,7 +200,6 @@ function mapVideoToPreview(normX, normY, previewW, previewH, videoW, videoH) {
     offsetY = 0;
   } else {
     // Video is taller: crop top/bottom
-    scale = previewW / videoWidth; // typo fixed below
     scale = previewW / videoW;
     displayedW = previewW;
     displayedH = videoH * scale;

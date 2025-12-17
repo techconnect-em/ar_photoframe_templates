@@ -26,8 +26,8 @@ const HAND_DETECTION_FPS = 10;
 const CROWN_SIZE_RATIO = 1.9;
 const CROWN_Y_OFFSET_RATIO = 1.0; // Lowered to bring crown closer to head
 // Medal
-const MEDAL_SIZE_RATIO = 0.9;
-const MEDAL_Y_OFFSET_RATIO = 0.4;
+const MEDAL_SIZE_RATIO = 0.8;
+const MEDAL_Y_OFFSET_RATIO = -0.2;
 // Trophy
 const TROPHY_SIZE_RATIO = 3.0; // Reduced size
 const TROPHY_Y_OFFSET_RATIO = -1.5;

@@ -24,13 +24,13 @@ const HAND_DETECTION_FPS = 10;
 // Transform Constants
 // Crown
 const CROWN_SIZE_RATIO = 1.9;
-const CROWN_Y_OFFSET_RATIO = 0.7; // Lowered to bring crown closer to head
+const CROWN_Y_OFFSET_RATIO = 1.0; // Lowered to bring crown closer to head
 // Medal
 const MEDAL_SIZE_RATIO = 0.9;
-const MEDAL_Y_OFFSET_RATIO = 0.5;
+const MEDAL_Y_OFFSET_RATIO = 0.8;
 // Trophy
-const TROPHY_SIZE_RATIO = 3.5; // Reduced size
-const TROPHY_Y_OFFSET_RATIO = -2.0;
+const TROPHY_SIZE_RATIO = 3.0; // Reduced size
+const TROPHY_Y_OFFSET_RATIO = -1.5;
 
 const CAMERA_CONSTRAINTS = {
   audio: false,

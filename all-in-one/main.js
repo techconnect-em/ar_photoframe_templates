@@ -23,14 +23,14 @@ const HAND_DETECTION_FPS = 10;
 
 // Transform Constants
 // Crown
-const CROWN_SIZE_RATIO = 1.9; // Adjusted for eye-distance based calculation
-const CROWN_Y_OFFSET_RATIO = 1.5; // Adjusted for eye-based center
+const CROWN_SIZE_RATIO = 1.9;
+const CROWN_Y_OFFSET_RATIO = 0.7; // Lowered to bring crown closer to head
 // Medal
 const MEDAL_SIZE_RATIO = 0.9;
 const MEDAL_Y_OFFSET_RATIO = 0.5;
 // Trophy
-const TROPHY_SIZE_RATIO = 5.0; // Adjusted for wrist-finger base calculation
-const TROPHY_Y_OFFSET_RATIO = -2.5;
+const TROPHY_SIZE_RATIO = 3.5; // Reduced size
+const TROPHY_Y_OFFSET_RATIO = -2.0;
 
 const CAMERA_CONSTRAINTS = {
   audio: false,
@@ -353,7 +353,7 @@ function computeMedalTransform(landmarks) {
     y: centerY + (shoulderWidth * MEDAL_Y_OFFSET_RATIO),
     width: medalWidth,
     height: medalHeight,
-    angle: shoulderAngle // Use shoulder rotation
+    angle: 0 // No rotation for medal - keep it upright
   };
 }
 
